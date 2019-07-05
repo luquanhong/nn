@@ -41,7 +41,12 @@ classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship'
 
 data, label = trainset[100]
 print classes[label]
-show((data + 1) /2).resize((100, 100)).show()
+# show((data + 1) /2).resize((100, 100)).show()show
 
+
+dataiter = iter(trainloader)
+images, labels = dataiter.next()
+print (''.join('%11s'%classes[labels[j]] for j in range(4)))
+show(tv.utils.make_grid((images + 1)/2)).resize((400, 100)).show()
 
 print "hello world"
